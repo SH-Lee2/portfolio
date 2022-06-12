@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 
-import { Header, Logo, Nav, SocialIconsList } from "../styles/Sidebar.styled";
+import { Header, Logo, Nav, SocialIconsList } from "./styles/Sidebar.styled";
 import {
     faEnvelope,
     faHouse,

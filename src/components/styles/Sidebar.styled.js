@@ -8,7 +8,7 @@ export const Header = styled.header`
     background-color: ${({ theme }) => theme.colors.side};
     width: 90px;
     height: 100%;
-    position: absolute;
+    position: fixed;
 `;
 export const Logo = styled.div`
     text-align: center;
@@ -23,10 +23,10 @@ export const Nav = styled.nav`
             position: relative;
             .active svg,
             .active::after {
-                color: ${({ theme }) => theme.colors.lightRed};
+                color: ${({ theme }) => theme.colors.mainColor1};
             }
             a {
-                color: ${({ theme }) => theme.colors.baseIconColor};
+                color: ${({ theme }) => theme.colors.baseColor};
 
                 &:hover {
                     svg {
@@ -90,7 +90,7 @@ export const SocialIconsList = styled.ul`
     li {
         a {
             svg {
-                color: ${({ theme }) => theme.colors.baseIconColor};
+                color: ${({ theme }) => theme.colors.baseColor};
                 opacity: 0.5;
                 &:hover {
                     opacity: 0.8;
