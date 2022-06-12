@@ -1,8 +1,13 @@
 import React from "react";
 import { Section } from "../../styles/Section.styled";
+import Transitions from "../../Transitions";
 
 const Project = () => {
-    return <Section>Project</Section>;
+    return (
+        <Transitions>
+            <Section>Project</Section>
+        </Transitions>
+    );
 };
 
 export default Project;

@@ -11,7 +11,7 @@ ${reset}
 }
 
 body{
-
+    height:100vh;
     background-color: ${({ theme }) => theme.colors.bgColor};
     font-family: 'Open Sans', sans-serif;
 }

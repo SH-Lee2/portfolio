@@ -1,8 +1,13 @@
 import React from "react";
 import { Section } from "../../styles/Section.styled";
+import Transitions from "../../Transitions";
 
 const About = () => {
-    return <Section>About</Section>;
+    return (
+        <Transitions>
+            <Section>About</Section>
+        </Transitions>
+    );
 };
 
 export default About;

@@ -63,7 +63,6 @@ const ContactForm = () => {
                 }
             );
     };
-    console.log(enteredNameIsValid, enteredEmailIsValid, enteredMessageIsValid);
     const nameClass = nameInputHasError ? "error" : "";
     const emailClass = emailInputHasError ? "error" : "";
     const messageClass = messageInputHasError ? "error" : "";
