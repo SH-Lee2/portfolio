@@ -12,6 +12,13 @@ export const Header = styled.header`
 `;
 export const Logo = styled.div`
     text-align: center;
+    svg {
+        fill: red;
+        stroke: ${({ theme }) => theme.colors.mainColor1};
+        #logo {
+            fill: ${({ theme }) => theme.colors.mainColor1};
+        }
+    }
 `;
 export const Nav = styled.nav`
     width: 100%;
