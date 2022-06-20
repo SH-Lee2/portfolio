@@ -1,33 +1,43 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const Header = styled.header`
     display: flex;
-    flex-direction: column;
     justify-content: space-between;
-    padding: 2rem 0;
-    background-color: ${({ theme }) => theme.colors.side};
-    width: 90px;
-    height: 100%;
+    align-items: center;
+    width: 100%;
+    max-height: 80px;
     position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    transition: 0.4;
 `;
-export const Logo = styled.div`
-    text-align: center;
-    svg {
-        /* fill: red;
-        stroke: ${({ theme }) => theme.colors.mainColor1};
-        #logo {
-            fill: ${({ theme }) => theme.colors.mainColor1};
-        } */
-        width: 70px;
-        height: 70px;
+export const Logo = styled(Link)`
+    display: inline-flex;
+    align-items: center;
+    font-size: 2rem;
+    color: ${({ theme }) => theme.colors.mainColor1};
+    font-weight: 700;
+    font-style: italic;
+    letter-spacing: 2px;
+    text-decoration: underline;
+    padding: 2rem;
+    flex: 1;
+    @media ${({ theme }) => theme.devices.tabletS} {
+        padding-top: 4rem;
+        margin-bottom: 2rem;
     }
 `;
 export const Nav = styled.nav`
+    flex: 1;
     width: 100%;
     text-align: center;
+    padding: 2rem;
     ul {
-        display: grid;
-        row-gap: 4rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         li {
             position: relative;
             .active svg,
@@ -36,7 +46,6 @@ export const Nav = styled.nav`
             }
             a {
                 color: ${({ theme }) => theme.colors.baseColor};
-
                 &:hover {
                     svg {
                         opacity: 0;
@@ -44,19 +53,20 @@ export const Nav = styled.nav`
                     &:after {
                         opacity: 1;
                     }
+                    transition: all 0.5s;
                 }
                 &::after {
                     content: "";
                     position: absolute;
-                    bottom: 0;
-                    left: 0;
+                    left: 0px;
+                    top: 30%;
                     text-align: center;
                     letter-spacing: 1px;
                     font-weight: 700;
                     width: 100%;
                     font-size: 0.8rem;
                     opacity: 0;
-                    transition: all 0.3s;
+                    transition: all 0.5s;
                 }
             }
             &:nth-child(1) {
@@ -70,6 +80,7 @@ export const Nav = styled.nav`
                 a {
                     &::after {
                         content: "ABOUT";
+                        left: -10px;
                     }
                 }
             }
@@ -77,6 +88,7 @@ export const Nav = styled.nav`
                 a {
                     &::after {
                         content: "PROJECT";
+                        left: -10px;
                     }
                 }
             }
@@ -84,26 +96,34 @@ export const Nav = styled.nav`
                 a {
                     &::after {
                         content: "CONTACT";
+                        left: -20px;
                     }
                 }
             }
         }
     }
-`;
-
-export const SocialIconsList = styled.ul`
-    display: grid;
-    text-align: center;
-    row-gap: 0.5rem;
-    font-size: 1.2rem;
-    li {
-        a {
-            svg {
-                color: ${({ theme }) => theme.colors.baseColor};
-                opacity: 0.5;
-                &:hover {
-                    opacity: 0.8;
-                    transition: all 0.3s;
+    @media ${({ theme }) => theme.devices.tabletS} {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 63px;
+        padding: 1.2rem 1rem;
+        transition: 0.4s;
+        font-size: 0.8rem;
+        background-color: #fff;
+        ul {
+            li {
+                a {
+                    &:hover {
+                        svg {
+                            opacity: 1;
+                        }
+                        &::after {
+                            opacity: 0;
+                        }
+                    }
                 }
             }
         }

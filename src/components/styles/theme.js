@@ -1,32 +1,32 @@
-const lightColors = {
-    bgColor: "#F2F2F2",
-    side: "#F2CB05",
-    baseColor: "#0D0D0D",
-    mainColor1: "#F29F05",
-    yellow: "#D92B04",
-    errorColor: "#f2dc6d",
-};
-
 const darkColors = {
-    bgColor: "#0D0D0D",
     side: "#404040",
     baseColor: "#D9D4D0",
     mainColor1: "#0378A6",
-    yellow: "#F2CB05",
     errorColor: "#f2dc6d",
 };
 
-const device = {
-    laptop: "(max-width:1025px)",
+const sizes = {
+    mobileS: "320px",
+    mobileM: "375px",
+    mobileL: "425px",
+    tablet: "768px",
+    laptop: "1024px",
+    laptopL: "1440px",
+    desktop: "2560px",
 };
 
-export const lightTheme = {
-    theme: "light",
-    colors: lightColors,
-    device,
+const devices = {
+    mobileS: `(max-width: ${sizes.mobileS})`,
+    mobileM: `(max-width: ${sizes.mobileM})`,
+    mobileL: `(min-width: ${sizes.mobileL})`,
+    tabletS: `(max-width: ${sizes.tablet})`,
+    tablet: `(min-width: ${sizes.tablet})`,
+    laptop: `(min-width: ${sizes.laptop})`,
+    laptopL: `(min-width: ${sizes.laptopL})`,
+    desktop: `(min-width: ${sizes.desktop})`,
 };
-export const darkTheme = {
-    theme: "dark",
+
+export const theme = {
     colors: darkColors,
-    device,
+    devices,
 };

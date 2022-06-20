@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
-import { Form } from "../../styles/Contact.styled";
+import { Form, InputBox } from "../../styles/Contact.styled";
 import useInput from "../../../hooks/use-input";
 import validator from "validator";
 
@@ -69,32 +69,43 @@ const ContactForm = () => {
 
     return (
         <Form ref={form} onSubmit={sendEmail}>
-            <input
-                type="text"
-                name="from_name"
-                value={enteredName}
-                className={nameClass}
-                onChange={nameChangedHandler}
-                onBlur={nameBlurHandler}
-                placeholder="Name"
-            />
-            <input
-                type="email"
-                name="from_email"
-                value={enteredEmail}
-                className={emailClass}
-                onChange={emailChangeHandler}
-                onBlur={emailBlurHandler}
-                placeholder="Email"
-            />
-            <textarea
-                name="message"
-                value={enteredMessage}
-                className={messageClass}
-                onChange={messageChangedHandler}
-                onBlur={messageBlurHandler}
-                placeholder="Your Message"
-            />
+            <InputBox>
+                <input
+                    type="text"
+                    name="from_name"
+                    value={enteredName}
+                    className={nameClass}
+                    onChange={nameChangedHandler}
+                    onBlur={nameBlurHandler}
+                    required
+                />
+                <span className={nameClass}>NAME</span>
+            </InputBox>
+            <InputBox>
+                <input
+                    type="email"
+                    name="from_email"
+                    value={enteredEmail}
+                    className={emailClass}
+                    onChange={emailChangeHandler}
+                    onBlur={emailBlurHandler}
+                    required
+                />
+
+                <span className={emailClass}>EMAIL</span>
+            </InputBox>
+            <InputBox>
+                <textarea
+                    name="message"
+                    value={enteredMessage}
+                    className={messageClass}
+                    onChange={messageChangedHandler}
+                    onBlur={messageBlurHandler}
+                    required
+                />
+                <span className={messageClass}>YOUR MESSAGE</span>
+            </InputBox>
+
             <button type="submit" disabled={!formIsValid}>
                 Send Email
             </button>
