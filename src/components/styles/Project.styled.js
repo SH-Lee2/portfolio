@@ -40,7 +40,6 @@ export const ProjectSection = styled.section`
             padding: 0.5rem 0.5rem 1.5rem;
             border-radius: 1rem;
             transition: 0.4s;
-            position: relative;
             background: rgba(255, 255, 255, 0.45);
             backdrop-filter: blur(2.5px);
             -webkit-backdrop-filter: blur(2.5px);
@@ -58,12 +57,18 @@ export const ProjectSection = styled.section`
             img {
                 width: 240px;
                 height: 240px;
+                position: relative;
+
                 border-radius: 15px;
             }
             &:hover {
                 transform: scale(1.02);
+
                 a {
                     display: block;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
                 }
             }
             a {
@@ -71,8 +76,14 @@ export const ProjectSection = styled.section`
                 display: none;
                 top: 50%;
                 left: 50%;
-                font-size: 2rem;
-                color: #fff;
+                width: 100%;
+                height: 100%;
+                background-color: #000;
+                border-radius: 10px;
+                opacity: 0.85;
+                font-size: 4rem;
+                z-index: 100;
+                transform: translate(-50%, -50%);
             }
         }
     }
